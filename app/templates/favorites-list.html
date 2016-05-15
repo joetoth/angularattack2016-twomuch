@@ -1,9 +1,15 @@
-<h1>My Favorites:</h1>
-<div *ngIf="favsites.length == 0">You don't have any favorites yet. Start browsing!</div>
+<div class="myBox">
+<h3>My Favorites</h3>
+<div *ngIf="favsites.length == 0">
+  You don't have any favorites yet.<br>
+  Start browsing! <br>
+  Use arrow to pass, heart to save.
+</div>
 <div *ngIf="favsites.length > 0">
   <ul>
     <li class="fav-list" *ngFor="let favsite of favsites">
       <a target="_blank" href="http://{{favsite.domain}}"> {{ favsite.name }} </a>
     </li>
   </ul>
+</div>
 </div>

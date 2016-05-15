@@ -1,8 +1,11 @@
-<iframe src="http://{{mysite.domain}}" width="80%" height="70%">
+<iframe src="http://{{mysite.domain}}" width="95%" height="70%">
   <p>Your browser does not support iframes.</p>
 </iframe>
-<div class="center">
-    <div>Name: {{mysite.name}}</div>
-    <div>Description: {{mysite.description}}</div>
-    <div>Domain: {{mysite.domain}}</div>
+<div class="bottom-box">
+  <div class="myBox move-right">
+      <h4>Site Information</h4>
+      <div style="text-align: left;"><span class="title">Site name:</span>  {{mysite.name}} </div> <br>
+      <div style="text-align: left;"><span class="title">Description:</span> {{mysite.description}}</div><br>
+      <div style="text-align: left;"><span class="title">Domain:</span> {{mysite.domain}}</div>
+  </div>
 </div>
