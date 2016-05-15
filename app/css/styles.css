@@ -1,0 +1,21 @@
+body {
+  background-color: #ccccff;*/  /*purple
+  /*background-color: #ffd9cc; /* peach */*/
+  font-family: 'Arimo', sans-serif;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+}
+
+.center {
+  text-align: center;
+}
+
+.glyphicon {
+    font-size: 50px;
+}
+
+.text-left {
+  text-align: left;
+}
