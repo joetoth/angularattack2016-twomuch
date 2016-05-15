@@ -4,13 +4,24 @@ import {WebsiteService, Website} from './website.service';
 
 @Component({
   selector: 'my-app',
-  template: '<h1> TwoMuch Decision App - AngularAttack 2016</h1><website [site]="site"></website>',
+  templateUrl: 'app/templates/app.html',
   directives: [WebsiteComponent],
   providers: [WebsiteService]
 })
 export class AppComponent {
-  site: Website;
-  constructor(private service: WebsiteService) {
-    this.site = service.getWebsites();
+  site: any = {};
+  isDataAvailable: boolean = false;
+  constructor (private service: WebsiteService) {
+  this.service = service;
+}
+
+  ngOnInit() {
+    let self = this;
+    this.service.getWebsites()
+      .then(function(resp){
+        self.site = resp.val()[Object.keys(resp.val())[0]];
+        self.isDataAvailable = true;
+      })
   }
+
 }

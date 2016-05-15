@@ -1,14 +1,3 @@
-export class WebsiteService {
-  constructor() { }
-
-  getWebsites() {
-    let site = new Website("Stock Sandwich",
-    "stocksandwich.com", "Stock Sandwich aims to provide...",
-    "A free, high-res site...");
-      return site;
-    };
-  }
-
 export class Website {
     name: string;
     description: string;
@@ -21,4 +10,17 @@ export class Website {
       this.domain = dom;
       this.summary = sum;
     }
+  }
+
+export class WebsiteService {
+  ref: Firebase;
+  sites: any;
+
+  constructor() {
+    this.ref  = new Firebase("https://flickering-fire-5244.firebaseio.com");
+  }
+
+  getWebsites() {
+    return this.ref.child("site").once("value");
+    };
   }

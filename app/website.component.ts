@@ -7,5 +7,5 @@ import {Website} from './website.service';
 })
 export class WebsiteComponent {
   @Input()
-  site: Website;
+  mysite: Website;
 }
