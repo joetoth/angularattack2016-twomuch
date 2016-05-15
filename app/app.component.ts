@@ -1,41 +1,41 @@
 import {Component} from '@angular/core';
 import {WebsiteComponent} from './website.component';
 import {WebsiteService, Website} from './website.service';
+import {FavoritesListComponent} from './favoritesList.component';
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.html',
-  directives: [WebsiteComponent],
-  providers: [WebsiteService]
+  directives: [WebsiteComponent, FavoritesListComponent]
 })
 export class AppComponent {
   site: Website;
-  sites: Array<Website> = new Array;
-  index: number = 0;
   isDataAvailable: boolean = false;
+  // service: WebsiteService;
+
   constructor (private service: WebsiteService) {
-  this.service = service;
+    this.service = service;
 }
   ngOnInit() {
     let self = this;
     this.service.getWebsites()
       .then(function(resp){
-        let obj = resp.val();
-        for (var key in obj) {
-          self.sites.push(obj[key]);
-        }
-        self.site = self.sites[self.index];
+        self.site = resp[self.service.getIndex()];
         self.isDataAvailable = true;
       })
   }
 
   next() {
-    this.index++;
-    this.site = this.sites[this.index];
+    this.service.incrementIndex();
+    this.site = this.service.getCurrentSite();
   }
 
-  love() {
-    
+  love(thisSite) {  // <3 <3 <3
+    this.service.saveToFavorites(thisSite);
+  }
+
+  getFavorites() {
+    return this.service.getFavorites();
   }
 
 }

@@ -19,3 +19,8 @@ h1 {
 .text-left {
   text-align: left;
 }
+
+.fav-list {
+  list-style: none;
+  text-align: left;
+}

@@ -12,8 +12,15 @@
  <div class="row">
    <div class="col-md-4"></div>
    <div class="col-md-4">
-       <button class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span></button>
+       <button class="btn btn-primary" (click)="love(site)"><span class="glyphicon glyphicon-heart"></span></button>
        <button class="btn btn-primary" (click)="next()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+   </div>
+   <div class="col-md-4"></div>
+ </div>
+ <div class="row">
+   <div class="col-md-4"></div>
+   <div class="col-md-4">
+       <favorites-list [favsites]="getFavorites()"></favorites-list>
    </div>
    <div class="col-md-4"></div>
  </div>
