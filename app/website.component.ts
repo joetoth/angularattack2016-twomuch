@@ -3,7 +3,7 @@ import {WebsiteService} from './website.service';
 
 @Component({
   selector:    'website',
-  templateUrl: 'app/website.html',
+  templateUrl: 'app/templates/website.html',
   providers:   [WebsiteService]
 })
 export class WebsiteComponent { }

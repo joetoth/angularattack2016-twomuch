@@ -6,3 +6,4 @@ app/tsc.js
 app/website.component.js
 app/website.service.js
 typings/
+app/*.js
