@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
-import {WebsiteService} from './website.service';
+import {Component, Input} from '@angular/core';
+import {Website} from './website.service';
 
 @Component({
   selector:    'website',
-  templateUrl: 'app/templates/website.html',
-  providers:   [WebsiteService]
+  templateUrl: 'app/templates/website.html'
 })
-export class WebsiteComponent { }
+export class WebsiteComponent {
+  @Input()
+  site: Website;
+}
