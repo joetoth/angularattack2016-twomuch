@@ -2,3 +2,7 @@ node_modules
 npm-debug.log
 src/app/**/*.js
 src/app/**/*.js.map
+app/tsc.js
+app/website.component.js
+app/website.service.js
+typings/
