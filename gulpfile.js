@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 var jspm = require('gulp-jspm-build');
-gulp.task("jspm_bundle", function () {
+gulp.task("b", function () {
 return jspm({
     bundleOptions: {
         minify: true,
@@ -25,7 +25,7 @@ var Builder = require('systemjs-builder');
 // // sets the baseURL and loads the configuration file 
  var builder = new Builder('.', 'systemjs.config.js');
   builder
-  .bundle('app/main.js', 'outfile.js')
+  .bundle('app/main.js', 'app/app.js')
  .then(function() {
     console.log('Build complete');
     })
